@@ -20,7 +20,8 @@ class TripsController extends Controller
            'date' => 'required|date', // ISO 8601 string
            'cars_id' => 'required|integer',
            'miles' => 'required|numeric'
-       ]);
+        ]);
+
         // There was no specification what `total` in fact is?
         // Is it total miles per day? Or per car?
         $data['total'] = $request['miles'];

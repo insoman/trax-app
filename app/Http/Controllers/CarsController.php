@@ -34,7 +34,6 @@ class CarsController extends Controller
     public function destroy(Cars $car)
     {
         $car->delete();
-
         return response()->json(null, 204);
     }
 }
