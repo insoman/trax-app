@@ -63,8 +63,8 @@
                 axios.get(traxAPI.getCarsEndpoint())
                     .then(response => {
                         let cars = [];
-                        for(let i = 0; i < response.data.data.length; i++) {
-                            let car = response.data.data[i];
+                        for(let i = 0; i < response.data.length; i++) {
+                            let car = response.data[i];
                             cars.push({
                                 text: car.year + ' ' + car.make + ' ' + car.model,
                                 value: car.id
@@ -79,7 +79,7 @@
                 if (this.$refs.form.validate()) {
                     axios.post(traxAPI.addTripEndpoint(), {
                         date: this.date.toISOString(),
-                        car_id: this.car,
+                        cars_id: this.car,
                         miles: this.miles
                     }).then(response => {
                         this.$router.push('/trips')
@@ -93,7 +93,7 @@
             }
         },
         components: {
-            'date-picker' : require('../common/DatePicker.vue')
+            'date-picker' : require('../common/DatePicker.vue').default
         }
     }
 </script>

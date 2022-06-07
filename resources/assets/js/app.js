@@ -9,6 +9,7 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import Vue from 'vue'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import VueRouter from 'vue-router'
@@ -16,12 +17,12 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 Vue.use(Vuetify)
 
-Vue.component('trax-root', require('./components/TraxRoot.vue'));
-Vue.component('trips-view', require('./components/partials/TripsView.vue'));
-Vue.component('cars-view', require('./components/partials/CarsView.vue'));
-Vue.component('car-view', require('./components/partials/CarView.vue'));
-Vue.component('new-car-view', require('./components/partials/NewCarView.vue'));
-Vue.component('new-trip-view', require('./components/partials/NewTripView.vue'));
+Vue.component('trax-root', require('./components/TraxRoot.vue').default);
+Vue.component('trips-view', require('./components/partials/TripsView.vue').default);
+Vue.component('cars-view', require('./components/partials/CarsView.vue').default);
+Vue.component('car-view', require('./components/partials/CarView.vue').default);
+Vue.component('new-car-view', require('./components/partials/NewCarView.vue').default);
+Vue.component('new-trip-view', require('./components/partials/NewTripView.vue').default);
 
 
 // Create Router

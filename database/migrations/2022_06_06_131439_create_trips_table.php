@@ -21,8 +21,8 @@ class CreateTripsTable extends Migration
             $table->float('miles');
             $table->float('total');
 
-            $table->unsignedBigInteger('car_id')->index();
-            $table->foreign('car_id')->references('id')->on('cars');
+            $table->unsignedBigInteger('cars_id')->index();
+            $table->foreign('cars_id')->references('id')->on('cars');
 
         });
     }

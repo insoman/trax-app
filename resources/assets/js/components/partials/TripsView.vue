@@ -16,7 +16,7 @@
                 >
                     <template slot="items" slot-scope="props">
                         <td>{{ props.item.date }}</td>
-                        <td>{{ props.item.car.year + ' ' + props.item.car.make + ' ' + props.item.car.model}}</td>
+                        <td>{{ props.item.cars.year + ' ' + props.item.cars.make + ' ' + props.item.cars.model}}</td>
                         <td>{{ props.item.miles }}</td>
                         <td>{{ props.item.total }}</td>
                     </template>
@@ -56,7 +56,7 @@
             fetch() {
                 axios.get(traxAPI.getTripsEndpoint())
                     .then(response => {
-                        this.items = response.data.data;
+                        this.items = response.data;
                     }).catch(e => {
                     console.log(e);
                 });
